@@ -177,21 +177,33 @@ ul#help-list img {
 
 footer {
     background-image: url(../../assets/images/footer-background.png);
-    background-size: cover;
 }
+
+footer h3, h4 {
+    margin: 0;  
+}
+
 
 footer h3 {
     color: var(--color-light-xl);
+    margin-bottom: 20px;
 }
 
 footer h4 {
     color: var(--color-primary);
 }
 
+#footer-content {
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
 .footer-item {
+    height: 72px;
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 10px 15px;    
+    gap: 15px 15px;
+
 }
