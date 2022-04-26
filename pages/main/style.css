@@ -5,7 +5,7 @@
     --color-dark-m: #B2B2B2;
 
     --color-light-l: #F6F6F6;
-    --color-light-xl: 4; 
+    --color-light-xl: #FFFFFF; 
 }
 
 body {
@@ -50,6 +50,11 @@ p {
     line-height: 160%;
 }
 
+a, a:hover, a:visited, a:focus {
+    text-decoration: none;
+    color: var(--color-dark-l);
+}
+
 p.small {
     color: var(--color-dark-m);
     font-size: 12px;
@@ -89,7 +94,7 @@ header {
 }
 
 #not-only > h2, #not-only > p {
-    color: white;
+    color: var(--color-light-xl);
 }
 
 #start-screen-puppy {
@@ -149,7 +154,6 @@ ul#help-list img {
 }
 
 #donation-link, #donation-link:hover, #donation-link:visited, #donation-link:focus {
-    text-decoration: none;
     color: var(--color-dark-l); 
 }
 #donation-link {    
@@ -172,7 +176,22 @@ ul#help-list img {
 
 
 footer {
-    height: 200px;
     background-image: url(../../assets/images/footer-background.png);
     background-size: cover;
+}
+
+footer h3 {
+    color: var(--color-light-xl);
+}
+
+footer h4 {
+    color: var(--color-primary);
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 15px;    
 }
