@@ -1,6 +1,10 @@
 :root {
+    --color-primary: #F1CDB3;
+
     --color-dark-l: #545454;
     --color-dark-m: #B2B2B2;
+
+    --color-light-l: #F6F6F6;
     --color-light-xl: 4; 
 }
 
@@ -132,6 +136,38 @@ ul#help-list li {
 
 ul#help-list img {
     margin: 0 auto;
+}
+
+/* Donation Section */
+
+#donation {
+    background-color: var(--color-light-l);
+}
+
+#make-donation {
+    width: 33%;
+}
+
+#donation-link, #donation-link:hover, #donation-link:visited, #donation-link:focus {
+    text-decoration: none;
+    color: var(--color-dark-l); 
+}
+#donation-link {    
+    background-color: var(--color-primary);
+    border-radius: 9px;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 15px;
+}
+
+#donation-link > img {
+
+}
+
+#donation-link > h4 {
+    margin: 0;
 }
 
 
