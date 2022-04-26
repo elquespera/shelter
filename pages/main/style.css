@@ -1,0 +1,121 @@
+:root {
+    --color-dark-l: #545454;
+    --color-dark-m: #B2B2B2;
+    --color-light-xl: 4; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+h1, h2, h3, h4, h5, p {
+    color: var(--color-dark-l); 
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 44px;
+}
+
+h3, h4, h5 {
+    letter-spacing: 0.06em;
+}
+
+h3 {
+    font-size: 35px;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 115%;
+}
+
+h5 {
+    font-size: 15px;
+    line-height: 110%;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+p.small {
+    color: var(--color-dark-m);
+    font-size: 12px;
+    line-height: 150%;
+    font-style: italic;
+}
+
+header {
+    position: absolute;
+    height: 300px;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 40px 40px 50px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#start-screen {
+    background-image: url(../../assets/images/start-screen-background.png);
+    background-size: cover;
+}
+
+#start-screen-content {
+    padding-top: 180px;
+    margin-top: 0;
+}
+
+#not-only {
+    margin-top: 163px;
+    margin-right: 42px;
+    height: 322px;
+    width: 460px;
+}
+
+#not-only > h2, #not-only > p {
+    color: white;
+}
+
+#start-screen-puppy {
+
+}
+
+#about-pets {
+
+}
+
+#about-shelter {
+    width: 430px;
+}
+
+#help-content {
+    flex-direction: column;
+}
+
+ul#help-list {
+    display: flex;
+    list-style: none;
+}
+
+ul#help-list li {
+    
+}
+
+
+footer {
+    height: 200px;
+    background-image: url(../../assets/images/footer-background.png);
+    background-size: cover;
+}
