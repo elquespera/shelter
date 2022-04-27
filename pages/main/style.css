@@ -322,7 +322,6 @@ footer h4 {
 
 #modal {
     display: none;
-    display: block;
     position: fixed;
     z-index: 20;
     left: 0;
@@ -359,8 +358,7 @@ footer h4 {
 }
 
 #modal-content > img {
-    width: 500px;
-    height: 500px;
+    min-height: 500px;
 }
 
 #modal-content > .pet-info {
