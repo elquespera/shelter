@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <script src="script.js"></script>
+    <title>Shelter</title>
 </head>
 <body>
     <header>
@@ -40,7 +41,8 @@
             <div id="pets-content" class="wrapper">
                 <h3>Our friends who<br>are looking for a house</h3>
                 <div id="pets-slider-wrapper">
-                    <button type="button" class="secondary circle arrow left"></button>
+                    <button type="button" class="secondary circle arrow left" onclick="sliderButtonClick(false)"></button>
+                    <div id="pets-slider-container">
                     <div id="pets-slider">
                         <div class="pet-card">
                             <img src="../../assets/images/pets-katrine.png" alt="Katrine">
@@ -83,7 +85,8 @@
                             <button type="button" class="secondary">Learn more</button>
                         </div>                                                                                                                                                       
                     </div>
-                    <button type="button" class="secondary circle arrow right"></button>
+                    </div>
+                    <button type="button" class="secondary circle arrow right" onclick="sliderButtonClick(true)"></button>
                 </div>
                 <button type="button">Get to know the rest</button>
             </div>      
@@ -111,7 +114,7 @@
                     <h3>You can also<br>make a donation</h3>
                     <h5>Name of the bank / Type of bank account</h5>
                     <button type="button" id="donation-link">
-                        <img src="../../assets/icons/credit-card.svg">
+                        <img src="../../assets/icons/credit-card.svg" alt="Credit card">
                         <h4>8380 2880 8028 8791 7435</h4>
                     </button>
                     <p class="small">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>

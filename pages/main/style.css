@@ -88,12 +88,12 @@ button:hover {
 
 button.secondary {
     background-color: var(--color-light-xl);
-    border: 1px solid var(--color-primary)
+    border: 2px solid var(--color-primary)
 }
 
 button.secondary:hover {
     background-color: var(--color-primary-light);
-    border: 1px solid var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
 }
 
 button.circle {
@@ -183,15 +183,21 @@ header {
     margin-bottom: 40px;
 }
 
-#pets-slider {
-    display: flex;
-    flex-flow: row nowrap;
+#pets-slider-container {
     overflow: hidden;
     width: 100%;
-    /* background-color: red; */
+}
+
+#pets-slider {
+    display: block;
+    position: relative;
+    width: 30000px;
+    left: 0;
+    transition: left 0.5s ease-out;
 }
 
 .pet-card {
+    float: left;
     display: flex;
     flex-flow: column nowrap;
     justify-items: center;
@@ -199,8 +205,20 @@ header {
     background-color: var(--color-light-xl);
     border-radius: 9px;
     width: 270px;
-    margin-left: 80px;
+    margin: 10px 0 10px 80px;
     padding-bottom: 30px;
+    transition: box-shadow 0.3s ease-out;
+}
+
+.pet-card:hover {
+    cursor: pointer;
+    box-shadow: 0 0px 10px 0 rgba(0,0,0,0.48);
+}
+
+.pet-card:hover > button {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+    box-shadow: none;
 }
 
 /* Help Section */
