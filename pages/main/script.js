@@ -33,3 +33,8 @@ function sliderButtonClick(isRight = false) {
     if (slider == undefined) slider = new Slider();
     slider.moveOne(isRight); 
 }
+
+
+function modalClose() {
+    document.getElementById('modal').style.display = 'none';
+}
