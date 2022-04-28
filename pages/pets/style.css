@@ -1,3 +1,6 @@
+
+/* Header & Menu modifications for pets page */
+
 header {
     top: 30px;
 }
@@ -16,5 +19,37 @@ header {
 }
 
 #menu a:hover, #menu a.highlight {
-    color: var(--color-dark 3xl);
+    color: var(--color-dark-3xl);
 }
+
+/* Pets Section */
+
+#pets {
+    background-color: var(--color-light-l);
+}
+
+#pets h3 {
+    text-align: center;
+}
+
+#pets-content {
+    margin-top: 120px;
+    flex-flow: column nowrap;
+    justify-items: center;
+    align-items: center;
+    gap: 60px;
+}
+
+#cards-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 30px 40px;
+}
+
+.pet-card {
+    margin: 0;
+}
+

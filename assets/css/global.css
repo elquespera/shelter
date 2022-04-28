@@ -173,6 +173,7 @@ header {
     display: flex;
     margin: 0;
     padding: 0;
+    margin-bottom: 2px;
 }
 
 #menu ul li {
@@ -193,4 +194,33 @@ header {
 #menu a:hover, #menu a.highlight {
     border-bottom: 3px var(--color-primary) solid;
     color: var(--color-light-s);
+}
+
+
+/* Pet Card Design */
+
+.pet-card {
+    float: left;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-items: flex-start;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--color-light-s);
+    border-radius: 9px;
+    width: 270px;
+    margin-right: 90px;
+    padding-bottom: 30px;
+    transition: box-shadow 0.3s ease-out;
+}
+
+
+.pet-card:hover {
+    cursor: pointer;
+    background-color: var(--color-light-xl);
+}
+
+.pet-card:hover button {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
 }
