@@ -94,6 +94,11 @@ button:hover {
     box-shadow: 0 0px 6px 0 var(--color-shadow);  
 }
 
+button[disabled] {
+    box-shadow: none;
+    cursor: auto;
+}
+
 button.secondary {
     background-color: var(--color-light-xl);
     border: 2px solid var(--color-primary);
@@ -105,10 +110,19 @@ button.secondary:hover {
     border: 2px solid var(--color-primary-light);
 }
 
+button.secondary:disabled, button.secondary[disabled]:hover {
+    border: 2px solid var(--color-dark-s);
+    color: var(--color-dark-s);
+    background-color: var(--color-light-s);
+}
+
 button.circle {
     padding: 0;
     min-width: 52px;
     min-height: 52px;
+    font-size: 20px;
+    text-align: center;
+    display: block;
 }
 
 button.arrow {

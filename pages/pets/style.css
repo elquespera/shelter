@@ -53,3 +53,8 @@ header {
     margin: 0;
 }
 
+#cards-navigation {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+}
