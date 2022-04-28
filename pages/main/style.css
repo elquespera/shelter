@@ -29,6 +29,7 @@ h1, h2, h3, h4, h5 {
     font-weight: 400;
     line-height: 130%;
     font-size: 44px;
+    margin: 0;
 }
 
 h3, h4, h5 {
@@ -54,11 +55,7 @@ p {
     font-size: 15px;
     font-weight: 400;
     line-height: 160%;
-}
-
-a, a:hover, a:visited, a:focus {
-    text-decoration: none;
-    color: var(--color-dark-l);
+    margin: 0;
 }
 
 p.small {
@@ -66,6 +63,11 @@ p.small {
     font-size: 12px;
     line-height: 150%;
     font-style: italic;
+}
+
+a, a:hover, a:visited, a:focus {
+    text-decoration: none;
+    color: var(--color-dark-l);
 }
 
 button {    
@@ -93,7 +95,8 @@ button:hover {
 
 button.secondary {
     background-color: var(--color-light-xl);
-    border: 2px solid var(--color-primary)
+    border: 2px solid var(--color-primary);
+    padding: 13px 43px;
 }
 
 button.secondary:hover {
@@ -123,8 +126,9 @@ button.close {
 .wrapper {
     width: 1200px;
     margin: 0 auto;
-    padding: 40px 40px 50px 40px;
+    padding: 80px 40px 100px 40px;
     display: flex;
+    flex-flow: row nowrap;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -143,7 +147,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: blue;     */
 }
 
 .logo-title {
@@ -151,20 +154,20 @@ header {
     font-size: 32px;
     letter-spacing: 0.06em;
     color: var(--color-primary);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .logo-subtitle {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     letter-spacing: 0.1em;
+    margin-left: 4px;
     color: var(--color-light-xl);     
 }
 
 #menu ul {
     list-style: none;
     display: flex;
-
     margin: 0;
     padding: 0;
 }
@@ -172,7 +175,7 @@ header {
 #menu ul li {
     margin: 0;
     padding: 0;
-    margin-left: 35px;
+    margin-left: 36px;
 }
 
 #menu a {
@@ -180,7 +183,7 @@ header {
     font-size: 15px;
     font-weight: 400;
     line-height: 1.6;
-    padding-bottom: 3px;
+    padding: 1px 0 3px 0;
     color: var(--color-dark-s);    
 }
 
@@ -190,6 +193,7 @@ header {
 }
 
 
+/* Start Screen Layout */
 #start-screen {
     background-image: url(../../assets/images/start-screen-gradient-background.png);
     background-repeat: no-repeat;
@@ -199,29 +203,45 @@ header {
 #start-screen-content {
     padding-top: 180px;
     padding-bottom: 0;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 #not-only {
     margin-top: 163px;
-    margin-right: 42px;
     height: 322px;
     width: 460px;
 }
 
-#not-only > h2, #not-only > p {
+#not-only > h2 {
     color: var(--color-light-xl);
 }
 
-#start-screen-puppy {
-
+#not-only h2 {
+    margin: 0 0 42px 0;
 }
 
-#about-pets {
-
+#not-only p {
+    margin: 0 0 40px 0;
+    color: var(--color-dark-s);
 }
+
+/* About Section Layout */
+#about-content {    
+    margin: 0 175px;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 #about-shelter {
     width: 430px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 25px;
 }
 
 
@@ -238,6 +258,8 @@ header {
 #pets-content {
     flex-flow: column nowrap;
     justify-items: center;
+    align-items: center;
+    gap: 60px;
 }
 
 #pets-slider-wrapper {
@@ -246,13 +268,12 @@ header {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 40px;
-    flex-basis: ;
 }
 
 #pets-slider-container {
     overflow: hidden;
     width: 100%;
+    margin-left: 53px;
 }
 
 #pets-slider {
@@ -267,15 +288,17 @@ header {
     float: left;
     display: flex;
     flex-flow: column nowrap;
-    justify-items: center;
+    justify-items: flex-start;
     align-items: center;
+    gap: 30px;
     background-color: var(--color-light-xl);
     border-radius: 9px;
     width: 270px;
-    margin: 10px 0 10px 80px;
+    margin-right: 90px;
     padding-bottom: 30px;
     transition: box-shadow 0.3s ease-out;
 }
+
 
 .pet-card:hover {
     cursor: pointer;
@@ -295,25 +318,27 @@ header {
 }
 
 #help-content {
-    flex-direction: column;
+    flex-flow: column nowrap;
+    gap: 60px;
     width: 1026px;
 }
 
 ul#help-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0px;
     display: flex;
-    gap: 10px 80px;
     flex-flow: row wrap;
+    gap: 54px 118px;
     align-items: baseline;
-    justify-content: space-evenly;    
+    justify-content: center;    
 }
 
 ul#help-list li {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    gap: 30px;
 }
 
 ul#help-list img {
@@ -326,22 +351,31 @@ ul#help-list img {
     background-color: var(--color-light-l);
 }
 
+#donation-content {
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
 #make-donation {
-    width: 33%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 20px;
+    width: 380px;
 }
 
 #donation-link {    
-    border-radius: 9px;  
-    justify-content: space-evenly;
-    padding: 10px 15px;
+    border-radius: 9px; 
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 15px;
     font-size: 20px;
+    letter-spacing: 0.06em;
+    line-height: 1.3;
 }
-
-#donation-link > img {
-    margin-right: 12px;
-}
-
-
 
 footer {
     background-image: url(../../assets/images/footer-gradient-background.png);
@@ -349,14 +383,8 @@ footer {
     background-repeat: no-repeat;
 }
 
-footer h3, footer h4 {
-    margin: 0;  
-}
-
-
 footer h3 {
     color: var(--color-light-xl);
-    margin-bottom: 20px;
 }
 
 footer h4 {
@@ -365,17 +393,27 @@ footer h4 {
 
 #footer-content {
     justify-content: space-between;
+    /* gap: 160px; */
+    align-items: flex-start;
+    padding-top: 40px;
     padding-bottom: 0;
 }
 
+#footer-locations, #footer-contacts {
+    margin-top: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: 32px;
+}
+
 .footer-item {
-    height: 72px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 15px 15px;
-
+    gap: 20px;
+    min-height: 46px;
 }
 
 #modal {
