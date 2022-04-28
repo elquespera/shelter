@@ -4,6 +4,7 @@
 
     --color-dark-l: #545454;
     --color-dark-m: #B2B2B2;
+    --color-dark-s: #CDCDCD;
 
     --color-light-s: #FAFAFA;
     --color-light-l: #F6F6F6;
@@ -102,8 +103,8 @@ button.secondary:hover {
 
 button.circle {
     padding: 0;
-    width: 52px;
-    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
 }
 
 button.arrow {
@@ -118,15 +119,7 @@ button.close {
     background: url(../../assets/icons/close.svg) no-repeat center;
 }
 
-/* Header & Menu */
-
-header {
-    position: absolute;
-    top: 40px;
-    height: 60px;
-    /* background-color: blue; */
-}
-
+/* Generic Wrapper */
 .wrapper {
     width: 1200px;
     margin: 0 auto;
@@ -136,6 +129,67 @@ header {
     justify-content: space-evenly;
 }
 
+/* Header & Menu */
+
+header {
+    position: absolute;
+    top: 60px;
+    height: 60px;
+    width: 100%;
+}
+
+#header-wrapper {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: blue;     */
+}
+
+.logo-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 32px;
+    letter-spacing: 0.06em;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.logo-subtitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: var(--color-light-xl);     
+}
+
+#menu ul {
+    list-style: none;
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li {
+    margin: 0;
+    padding: 0;
+    margin-left: 35px;
+}
+
+#menu a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    padding-bottom: 3px;
+    color: var(--color-dark-s);    
+}
+
+#menu a:hover, #menu a.highlight {
+    border-bottom: 3px var(--color-primary) solid;
+    color: var(--color-light-s);
+}
+
+
 #start-screen {
     background-image: url(../../assets/images/start-screen-background.png);
     background-size: cover;
@@ -143,7 +197,7 @@ header {
 
 #start-screen-content {
     padding-top: 180px;
-    margin-top: 0;
+    padding-bottom: 0;
 }
 
 #not-only {
@@ -192,6 +246,7 @@ header {
     align-items: center;
     width: 100%;
     margin-bottom: 40px;
+    flex-basis: ;
 }
 
 #pets-slider-container {
