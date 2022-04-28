@@ -100,13 +100,26 @@ class Modal {
 
 let modal;
 
-function modalOpen(card) {
+function checkModal() {
     if (!modal) modal = new Modal();
-    modal.openModal(card);
+    return modal;
+}
+
+function modalOpen(card) {
+    checkModal().openModal(card);
 }
 
 
 function modalClose() {
-    if (!modal) modal = new Modal();
-    modal.closeModal();
+    checkModal().closeModal();
+}
+
+window.onclick = function (event) {
+    if (event.target == checkModal().window)
+        checkModal().closeModal();
+}
+
+window.onkeydown = function(event) {
+    if (event.keyCode == 27)
+        checkModal().closeModal();
 }
