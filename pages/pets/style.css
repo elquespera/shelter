@@ -1,0 +1,20 @@
+header {
+    top: 30px;
+}
+
+.logo-title {
+    color: var(--color-dark-l);
+    margin: 2px 0 12px 0;
+}
+
+.logo-subtitle {
+    color: var(--color-dark-3xl);     
+}
+
+#menu a {
+    color: var(--color-dark-l);    
+}
+
+#menu a:hover, #menu a.highlight {
+    color: var(--color-dark 3xl);
+}
