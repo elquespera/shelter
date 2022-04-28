@@ -291,7 +291,7 @@ header {
     justify-items: flex-start;
     align-items: center;
     gap: 30px;
-    background-color: var(--color-light-xl);
+    background-color: var(--color-light-s);
     border-radius: 9px;
     width: 270px;
     margin-right: 90px;
@@ -302,13 +302,12 @@ header {
 
 .pet-card:hover {
     cursor: pointer;
-    box-shadow: 0 0px 10px 0 var(--color-shadow);
+    background-color: var(--color-light-xl);
 }
 
-.pet-card:hover > button {
+.pet-card:hover button {
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
-    box-shadow: none;
 }
 
 /* Help Section */

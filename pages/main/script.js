@@ -1,13 +1,13 @@
 class Slider {
     pos = 0;
-    cardWidth = 270 + 80;
+    cardWidth = 270 + 90;
     cardsinView = 3;
     constructor() {
         this.slider = document.getElementById('pets-slider');
         this.cards = document.getElementsByClassName('pet-card');
         if (this.cards.length > 0) {            
             this.cardWidth = this.cards[0].offsetWidth + 
-                            parseInt(getComputedStyle(this.cards[0]).marginLeft);
+                            parseInt(getComputedStyle(this.cards[0]).marginRight);
         }
         this.count = this.cards.length - this.cardsinView + 1;
     }
