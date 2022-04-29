@@ -1,3 +1,4 @@
+// Pet information
 const pets = {
     Katrine: {
         kind: "Cat - British Shorthair",
@@ -42,15 +43,13 @@ const pets = {
 
 class Modal {
     constructor() {
-        let _window = document.getElementById('modal');
-        if (!_window) _window = this.injectModal();
-        this.window = _window;
+        this.window = document.getElementById('modal') ?? this.injectModal();
         this.cards = document.getElementsByClassName('pet-card');
         this.count = this.cards.length;
     }
 
     injectModal() {
-        let _modal = document.createElement('div')
+        let _modal = document.createElement('div');
         _modal.id = 'modal';
         _modal.innerHTML = 
         `<div id="modal-window">
@@ -59,8 +58,8 @@ class Modal {
                 <img id="pet-picture">
                 <div id="pet-info" class="pet-info">
                     <h3 id="pet-title"></h3>
-                    <h4 id="pet-kind"></h4>
-                    <h5 id="pet-description"></h5>
+                    <h4 id="pet-info-kind"></h4>
+                    <h5 id="pet-info-desc"></h5>
                     <ul>
                         <li>Age: <span id="pet-info-age"></span></li>
                         <li>Inoculations: <span id="pet-info-inoculations"></span></li>
@@ -79,14 +78,10 @@ class Modal {
         let src = card.children[0].src;
         document.getElementById('pet-title').innerHTML = name;
         document.getElementById('pet-picture').src = src;
-        if (pets[name]) {
-            document.getElementById('pet-kind').innerHTML = pets[name].kind;
-            document.getElementById('pet-description').innerHTML = pets[name].desc;
-            document.getElementById('pet-info-age').innerHTML = pets[name].age ? pets[name].age : 'unknown';
-            document.getElementById('pet-info-inoculations').innerHTML = pets[name].inoculations ? pets[name].inoculations : 'none';
-            document.getElementById('pet-info-diseases').innerHTML = pets[name].diseases ? pets[name].diseases : 'none';
-            document.getElementById('pet-info-parasites').innerHTML = pets[name].parasites ? pets[name].parasites : 'none';            
-        }
+        ['kind', 'desc', 'age', 'inoculations', 'diseases', 'parasites'].forEach(x=>{
+            let el = document.getElementById('pet-info-' + x);
+            if (el) el.innerHTML = pets[name][x] ?? 'none';
+        })
         this.window.style.display = 'block';
     }
 

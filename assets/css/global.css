@@ -76,6 +76,7 @@ button {
     justify-content: space-between;
     padding: 15px 45px;
     background-color: var(--color-primary);
+    color: var(--color-dark-3xl);
     border-radius: 100px;  
     border: none;
     cursor: pointer;
@@ -290,14 +291,12 @@ footer h4 {
 
 #modal-window {
     position: relative;
-    top: 0px;
+    top: 0;
     left: 0;
     width: 900px;
     margin: 5% auto;
-    padding: 20px;
     animation-name: modalanimate;
     animation-duration: 0.4s    
-
 }
 
 #modal-window > button {
@@ -321,8 +320,9 @@ footer h4 {
     min-height: 500px;
 }
 
-#modal-content > .pet-info {
-    padding-right: 20px;
+.pet-info {
+    width: 50%;
+    padding: 30px;
 }
 
 .pet-info > h3, .pet-info > h4 {
