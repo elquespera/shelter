@@ -6,6 +6,7 @@
     background-image: url(../../assets/images/start-screen-gradient-background.png);
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
 }
 
 #start-screen-content {
