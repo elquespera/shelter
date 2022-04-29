@@ -15,7 +15,7 @@
     --color-modal-shadow: rgba(29, 29, 29, 0.6);
 }
 
-body {
+body, *, h1, h2, h3, h4, h5, p, ul, li {
     margin: 0;
     padding: 0;
     border: 0;
@@ -30,7 +30,6 @@ h1, h2, h3, h4, h5 {
     font-weight: 400;
     line-height: 130%;
     font-size: 44px;
-    margin: 0;
 }
 
 h3, h4, h5 {
@@ -56,7 +55,6 @@ p {
     font-size: 15px;
     font-weight: 400;
     line-height: 160%;
-    margin: 0;
 }
 
 p.small {
@@ -185,14 +183,10 @@ header {
 #menu ul {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
     margin-bottom: 2px;
 }
 
 #menu ul li {
-    margin: 0;
-    padding: 0;
     margin-left: 36px;
 }
 
@@ -219,13 +213,12 @@ header {
     flex-flow: column nowrap;
     justify-items: flex-start;
     align-items: center;
-    gap: 30px;
+    gap: 29px;
     background-color: var(--color-light-s);
     border-radius: 9px;
     width: 270px;
     margin-right: 90px;
     padding-bottom: 30px;
-    transition: box-shadow 0.3s ease-out;
 }
 
 
@@ -237,4 +230,43 @@ header {
 .pet-card:hover button {
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
+}
+
+
+footer {
+    background-image: url(../../assets/images/footer-gradient-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+footer h3 {
+    color: var(--color-light-xl);
+}
+
+footer h4 {
+    color: var(--color-primary);
+}
+
+#footer-content {
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 40px;
+    padding-bottom: 0;
+}
+
+#footer-locations, #footer-contacts {
+    margin-top: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    min-height: 46px;
 }
