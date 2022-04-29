@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="style.css">   
     <script src="../../assets/js/global.js"></script>
+    <script src="script.js"></script>
     <title>Our pets</title>
 </head>
 <body>
@@ -78,11 +79,11 @@
                     </div>
                 </div>
                 <div id="cards-navigation">
-                    <button type="button" class="secondary circle" disabled onclick="">&lt;&lt;</button>
-                    <button type="button" class="secondary circle" disabled onclick="">&lt;</button>
-                    <button type="button" class="secondary circle" onclick="">1</button>
-                    <button type="button" class="secondary circle" onclick="">&gt;</button>
-                    <button type="button" class="secondary circle" onclick="">&gt;&gt;</button>
+                    <button type="button" id="fast-backward" class="secondary circle" disabled onclick="paginatorClick(this)">&lt;&lt;</button>
+                    <button type="button" id="backward" class="secondary circle" disabled onclick="paginatorClick(this)">&lt;</button>
+                    <button type="button" id="current-number" class="secondary circle" onclick="">1</button>
+                    <button type="button" id="forward" class="secondary circle" onclick="paginatorClick(this)">&gt;</button>
+                    <button type="button" id="fast-forward" class="secondary circle" onclick="paginatorClick(this)">&gt;&gt;</button>
                 </div>    
             </div>      
         </div>
