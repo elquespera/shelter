@@ -296,7 +296,7 @@ footer h4 {
     width: 900px;
     margin: 5% auto;
     animation-name: modalanimate;
-    animation-duration: 0.4s    
+    animation-duration: 0.4s; 
 }
 
 #modal-window > button {
