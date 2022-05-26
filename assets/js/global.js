@@ -91,13 +91,34 @@ class Modal {
 
 }
 
+class BurgerMenu {
+    _open = false;
+    _elements = ['#menu', '.logo', 'body'].
+                map(el => document.querySelector(el));
+    toggle() {
+        this._open = !this._open;
+        if (this._open) {
+            this._elements.forEach(el => el.classList.add('menu-open'));
+        } else {
+            this._elements.forEach(el => el.classList.remove('menu-open'));
+        }
+        
+    }
+}
+
 //Create modal variable of Modal class if necessary
 
 let modal;
+let burgerMenu;
 
 function checkModal() {
     if (!modal) modal = new Modal();
     return modal;
+}
+
+function checkBurgerMenu() {
+    if (!burgerMenu) burgerMenu = new BurgerMenu();
+    return burgerMenu;
 }
 
 function modalOpen(card) {
@@ -107,6 +128,10 @@ function modalOpen(card) {
 
 function modalClose() {
     checkModal().closeModal();
+}
+
+function burgerButtonClick() {
+    checkBurgerMenu().toggle();
 }
 
 // Global events that close modal window: clicking outside it and pressing ESC key

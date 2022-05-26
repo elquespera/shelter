@@ -1,7 +1,4 @@
 @media (max-width: 1279px) {
-    * {
-        box-sizing: border-box;
-    }
     .wrapper {
         width: 100%;
         padding: 80px 30px 100px 30px;
@@ -83,6 +80,79 @@
 }
 
 @media (max-width: 767px) {
+    body.menu-open {
+        overflow-y: hidden;
+    }
+    body.menu-open::after {
+        content: '';
+        position: fixed;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-modal-shadow);     
+    }
+
+    .logo {
+        position: relative;
+        margin-left: 0px;
+        z-index: 10;
+        transition: margin-left var(--default-transition);        
+    }
+
+    .logo.menu-open {
+        margin-left: calc(100% - 280px);
+    }
+
+    #menu {
+        position: relative;
+    }  
+    #menu ul {
+        position: fixed;
+        top: 0px;
+        right: -320px;
+        width: 320px;
+        height: 100%;
+        background-color: var(--color-dark-3xl);
+        padding-top: 243px;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+        transition: right var(--default-transition);
+        z-index: 5;
+    }
+
+    #menu.menu-open ul {
+        display: flex;
+        right: 0px;
+        top: 0px;        
+    }
+
+    #menu.menu-open #burger-button {
+        transform: rotate(90deg);
+        display: flex;
+    }    
+
+    #menu ul li {
+        margin: 0px;
+    }
+
+    #menu a {
+        font-size: 32px;
+        padding: 0px;
+    }
+
+    #burger-button {
+        display: block;
+    }
+
+    #menu.menu-open #burger-button {
+        transform: rotate(90deg);
+        display: flex;
+    }    
+    
+
     #footer-content {
         grid-template-columns: 1fr;
         row-gap: 20px;
@@ -90,4 +160,7 @@
     #footer-content > img {
         grid-column: 1 / span 1;
     }    
+    #footer-contacts, #footer-locations{
+        justify-self: center;
+    }
 }

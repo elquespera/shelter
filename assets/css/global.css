@@ -13,6 +13,9 @@
 
     --color-shadow: rgba(0,0,0,0.48);
     --color-modal-shadow: rgba(29, 29, 29, 0.6);
+
+    --common-border: 2px solid var(--color-primary);
+    --default-transition: 0.5s;
 }
 
 
@@ -208,6 +211,25 @@ header {
     color: var(--color-light-s);
 }
 
+#burger-button {
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    border-top: var(--common-border);
+    border-bottom: var(--common-border);
+    transition: transform 0.5s;
+    z-index: 10;
+}
+
+#burger-button::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    width: 30px;
+    border-top: var(--common-border);
+}
+
 
 /* Pet Card Design */
 
@@ -270,6 +292,7 @@ footer h4 {
     justify-content: space-between;
     gap: 30px;
 }
+
 
 #footer-contacts {
     width: 279px;
