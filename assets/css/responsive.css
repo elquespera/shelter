@@ -1,0 +1,56 @@
+@media (max-width: 1280px) {
+    * {
+        box-sizing: border-box;
+    }
+    .wrapper {
+        width: 100%;
+    }
+    header {
+        top: 30px;
+        left: 0px;
+    }
+    #header-wrapper {
+        padding: 0 30px;
+    }
+
+    #start-screen-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;        
+        padding-top: 150px;        
+    }
+    #not-only {
+        margin-top: 0px;
+    }
+    #not-only > button {
+        margin: 0 auto;
+    }
+    #start-screen-puppy {
+        width: 82.7%;
+        align-self: flex-end;
+    }
+    #about-content {
+        flex-direction: column-reverse;
+        gap: 80px;
+    }
+    #help-content {
+        width: 100%;
+    }
+    ul#help-list {
+        display: grid;
+        /* gap: auto; */
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #donation-content {
+        flex-direction: column-reverse;
+    }
+    #footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 65px;
+    }
+    #footer-content > img {
+        grid-column: 1 / span 2;
+        justify-self: center;
+    }
+}
