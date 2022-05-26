@@ -1,9 +1,10 @@
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
     * {
         box-sizing: border-box;
     }
     .wrapper {
         width: 100%;
+        padding: 80px 30px 100px 30px;
     }
     header {
         top: 30px;
@@ -17,7 +18,7 @@
         flex-direction: column;
         align-items: center;
         gap: 100px;        
-        padding-top: 150px;        
+        padding: 150px 20px 0px 20px;
     }
     #not-only {
         margin-top: 0px;
@@ -26,31 +27,67 @@
         margin: 0 auto;
     }
     #start-screen-puppy {
-        width: 82.7%;
+        width: 78.16%;
         align-self: flex-end;
     }
     #about-content {
         flex-direction: column-reverse;
         gap: 80px;
     }
+
+    #pets-slider-wrapper {
+        gap: calc((100vw - 768px) * 0.50);
+    }
+
+    #pets-slider-container {
+        margin-left: 6px;
+    }
+
+    .pet-card {
+        margin-right: 40px;
+    }
+
     #help-content {
-        width: 100%;
+        width: 94%;
     }
     ul#help-list {
         display: grid;
-        /* gap: auto; */
+        width: 100%;
+        gap: 54px 26px;
         grid-template-columns: repeat(3, 1fr);
     }
+
     #donation-content {
         flex-direction: column-reverse;
+        gap: 60px;
     }
+
     #footer-content {
-        display: grid;
+        padding-top: 30px;
         grid-template-columns: repeat(2, 1fr);
+        column-gap: 30px;
+        justify-items: center;
         row-gap: 65px;
+    }
+    #footer-locations {
+        justify-self: start;
+    }
+
+    #footer-contacts, #footer-locations{
+        margin-top: 0px;
     }
     #footer-content > img {
         grid-column: 1 / span 2;
         justify-self: center;
     }
+}
+
+@media (max-width: 767px) {
+    #footer-content {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+    #footer-content > img {
+        grid-column: 1 / span 1;
+    }    
 }

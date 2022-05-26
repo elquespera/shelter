@@ -68,7 +68,7 @@
     flex-flow: column nowrap;
     justify-items: center;
     align-items: center;
-    gap: 60px;
+    gap: 52px;
 }
 
 #pets-slider-wrapper {
@@ -81,6 +81,7 @@
 
 #pets-slider-container {
     overflow: hidden;
+    padding: 8px 4px 8px;
     width: 100%;
     margin-left: 53px;
 }
@@ -102,7 +103,6 @@
 #help-content {
     flex-flow: column nowrap;
     gap: 60px;
-    width: 1026px;
 }
 
 ul#help-list {
