@@ -95,15 +95,19 @@ class BurgerMenu {
     _open = false;
     _elements = ['#menu', '.logo', 'body'].
                 map(el => document.querySelector(el));
-    toggle() {
-        this._open = !this._open;
+    show() {
+        if (!this._open) {
+        this._open = true;
+        this._elements.forEach(el => el.classList.add('menu-open'));
+    }}
+    hide() {
         if (this._open) {
-            this._elements.forEach(el => el.classList.add('menu-open'));
-        } else {
-            this._elements.forEach(el => el.classList.remove('menu-open'));
+            this._open = false;
+            this._elements.forEach(el => el.classList.remove('menu-open'));    
         }
-        
     }
+
+    toggle = () => this._open ? this.hide() : this.show();
 }
 
 //Create modal variable of Modal class if necessary
@@ -136,13 +140,24 @@ function burgerButtonClick() {
 
 // Global events that close modal window: clicking outside it and pressing ESC key
 
-window.addEventListener('click', function(event) {
+window.addEventListener('click', event => {
     if (event.target == checkModal().window)
         checkModal().closeModal();
+
+    if (!['#menu', '.logo'].
+        some(c => event.target.closest(c))) {
+            checkBurgerMenu().hide();
+    }
 })
 
 
-window.addEventListener('keydown', function(event) {
-    if (event.key == 'Escape')
+window.addEventListener('keydown', event => {
+    if (event.key == 'Escape') {
         checkModal().closeModal();
+        checkBurgerMenu().hide();
+    }
+});
+
+window.addEventListener('resize', _ => {
+    if (window.innerWidth >= 768) checkBurgerMenu().hide();
 })

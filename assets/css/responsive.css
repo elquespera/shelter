@@ -145,7 +145,7 @@
         background-color: var(--color-modal-shadow);     
     }     
     .logo.menu-open {
-        margin-left: calc(100% - 280px);
+        margin-left: calc(100% - 257px);
     }       
     #menu.menu-open #burger-button {
         transform: rotate(90deg);
