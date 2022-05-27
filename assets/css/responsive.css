@@ -44,6 +44,14 @@
         margin-right: 40px;
     }
 
+    #cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }    
+
+    #cards-container .pet-card {
+        margin-right: 0px;
+    }
+
     #help-content {
         width: 94%;
     }
@@ -156,6 +164,11 @@
     .wrapper {
         padding: 42px 10px 42px 10px;
     }    
+
+    main {
+        /* min-width: 320px; */
+    }
+
     h2, h3 {
         font-size: 25px;
         text-align: center;
@@ -216,6 +229,13 @@
         margin: 0 calc((100% - var(--card-width) - 10px) / 2);
     }
 
+    #cards-container {
+        grid-template-columns: 1fr;
+        max-height: calc(464px * 3);
+        overflow: hidden;
+    }    
+
+
     #help-content {
         width: 100%;
         gap: 42px;
@@ -249,7 +269,7 @@
         font-size: 15px;
         gap: 10px;
         height: 43px;
-        width: 100%;
+        /* width: 100%; */
     }
     #make-donation {
         align-items: center;
@@ -276,14 +296,19 @@
         width: 100%;
         height: auto;
         justify-self: center;
-        justify-content: center;
+        align-items: center;
         gap: 29px;
     }
     #footer-contacts h3, #footer-locations h3 {
-        padding-left: 10px;
-        padding-right: 10px;
+        /* padding-left: 10px; */
+        /* padding-right: 10px; */
+        max-width: 280px;
     }
-    #footer-contacts a {
+    #footer-contacts a, #footer-locations a {
         justify-content: center;
+    }
+
+    #footer-locations a {
+        align-self: flex-start;
     }
 }

@@ -170,6 +170,10 @@ header {
     justify-content: space-between;
 }
 
+.logo {
+    white-space: nowrap;
+}
+
 .logo-title {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 32px;
