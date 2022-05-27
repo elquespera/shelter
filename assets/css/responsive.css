@@ -212,6 +212,8 @@
 
     #pets-slider-container {
         order: -1;
+        width: calc(var(--card-width) + 10px);
+        margin: 0 calc((100% - var(--card-width) - 10px) / 2);
     }
 
     #help-content {
