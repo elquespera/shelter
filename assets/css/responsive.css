@@ -80,31 +80,19 @@
 }
 
 @media (max-width: 767px) {
-    body.menu-open {
-        overflow-y: hidden;
-    }
-    body.menu-open::after {
-        content: '';
-        position: fixed;
-        z-index: 4;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--color-modal-shadow);     
+    #header-wrapper {
+        padding-left: 10px;
+        padding-right: 53px;
     }
 
+    /* Logo */
     .logo {
         position: relative;
         margin-left: 0px;
         z-index: 10;
         transition: margin-left var(--default-transition);        
     }
-
-    .logo.menu-open {
-        margin-left: calc(100% - 280px);
-    }
-
+    /* Burger Menu */
     #menu {
         position: relative;
     }  
@@ -123,17 +111,6 @@
         z-index: 5;
     }
 
-    #menu.menu-open ul {
-        display: flex;
-        right: 0px;
-        top: 0px;        
-    }
-
-    #menu.menu-open #burger-button {
-        transform: rotate(90deg);
-        display: flex;
-    }    
-
     #menu ul li {
         margin: 0px;
     }
@@ -147,20 +124,164 @@
         display: block;
     }
 
+    /* Burger menu open state */
+    #menu.menu-open ul {
+        display: flex;
+        right: 0px;
+        top: 0px;        
+    }
+
+    body.menu-open {
+        overflow-y: hidden;
+    }
+    body.menu-open::after {
+        content: '';
+        position: fixed;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-modal-shadow);     
+    }     
+    .logo.menu-open {
+        margin-left: calc(100% - 280px);
+    }       
     #menu.menu-open #burger-button {
         transform: rotate(90deg);
         display: flex;
+    }
+
+    /* General stuff */
+    .wrapper {
+        padding: 42px 10px 42px 10px;
     }    
-    
+    h2, h3 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    /* Not only section */
+    #not-only {
+        width: auto;
+        height: auto;
+        text-align: center;
+    }
+
+    #not-only h2 {
+        font-size: 25px;
+        letter-spacing: 0.06em;
+    }
+
+    /* Start screen */
+    #start-screen-content {
+        padding: 150px 10px 0px 10px;
+    }
+    #start-screen-puppy {
+        width: 266px;
+    }    
+    #about-content {
+        width: 300px;
+        gap: 42px;
+    }
+    #about-shelter {
+        width: auto;
+        gap: 23px;
+    }
+    #about-shelter p {
+        text-align: justify;
+        min-width: 270px;
+        /* margin-left: 15px;
+        margin-right: 15px; */
+    }
+    #about-pets {
+        width: 260px;
+    }
+
+    #pets-content {
+        gap: 44px;
+    }
+
+    #pets-slider-wrapper {
+        flex-wrap: wrap;
+    }
+
+    #pets-slider-wrapper .right {
+        margin-left: 80px;
+    }
+
+    #pets-slider-container {
+        order: -1;
+    }
+
+    #help-content {
+        width: 100%;
+        gap: 42px;
+    }
+    #help-content h4 {
+        font-size: 15px;
+    }
+    #help-content img {
+        height: 50px;
+    }
+    ul#help-list {
+        width: 100%;
+        gap: 30px 26px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    ul#help-list li {
+        gap: 20px;
+    }
+
+    #donation-content {
+        gap: 42px;
+    }
+    #make-donation {
+        width: auto;
+    }
+    #donation-dog {
+        width: 260px;
+    }
+    #donation-link {
+        font-size: 15px;
+        gap: 10px;
+        height: 43px;
+        width: 100%;
+    }
+    #make-donation {
+        align-items: center;
+        padding: 0px 10px;
+        gap: 22px;
+    }
+
+    #make-donation h5 {
+        letter-spacing: 0;
+    }
+    #make-donation p {
+        text-align: justify;
+    }
 
     #footer-content {
         grid-template-columns: 1fr;
-        row-gap: 20px;
+        row-gap: 40px;
     }
     #footer-content > img {
         grid-column: 1 / span 1;
+        width: 260px;
     }    
-    #footer-contacts, #footer-locations{
+    #footer-contacts, #footer-locations {
+        width: 100%;
+        height: auto;
         justify-self: center;
+        justify-content: center;
+        gap: 29px;
+    }
+    #footer-contacts h3, #footer-locations h3 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #footer-contacts a {
+        justify-content: center;
     }
 }
