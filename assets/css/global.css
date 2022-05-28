@@ -15,7 +15,7 @@
     --color-modal-shadow: rgba(29, 29, 29, 0.6);
 
     --common-border: 2px solid var(--color-primary);
-    --default-transition: 0.5s;
+    --default-transition: 0.3s;
     --card-width: 270px;
 }
 

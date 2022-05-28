@@ -100,6 +100,8 @@
         z-index: 10;
         transition: margin-left var(--default-transition);        
     }
+
+
     /* Burger Menu */
     #menu {
         position: relative;
@@ -139,6 +141,14 @@
         top: 0px;        
     }
 
+    #menu.menu-open a {
+        color: var(--color-dark-s);
+    }
+
+    #menu.menu-open a:hover {
+        color: var(--color-light-s);
+    }
+
     body.menu-open {
         overflow-y: hidden;
     }
@@ -155,6 +165,12 @@
     .logo.menu-open {
         margin-left: calc(100% - 257px);
     }       
+    .logo.menu-open .logo-title {
+        color: var(--color-primary);
+    }
+    .logo.menu-open .logo-subtitle {
+        color: var(--color-light-xl);
+    }
     #menu.menu-open #burger-button {
         transform: rotate(90deg);
         display: flex;
