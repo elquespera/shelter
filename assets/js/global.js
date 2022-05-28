@@ -82,7 +82,7 @@ class Modal {
             let el = document.getElementById('pet-info-' + x);
             if (el) el.innerHTML = pets[name][x] ?? 'none';
         })
-        this.window.style.display = 'block';
+        this.window.style.display = 'flex';
     }
 
     closeModal() {

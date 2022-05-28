@@ -85,6 +85,10 @@
         grid-column: 1 / span 2;
         justify-self: center;
     }
+
+    #modal-content > img {
+        min-width: 100px;
+    }        
 }
 
 @media (max-width: 767px) {
@@ -326,5 +330,32 @@
 
     #footer-locations a {
         align-self: flex-start;
+    }
+
+    /* Modal Window */
+    #modal-window .pet-info {
+        width: 100%;
+        padding: 10px;
+    }
+    #modal-window > button {
+        top: -55px;
+        right: -25px;
+    }
+
+    #modal-window img {
+        display: none;
+    }
+    #modal-window h3 {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }    
+    #modal-window h4 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #modal-window h5 {
+        font-size: 13px;
+        margin-bottom: 24px;
+        text-align: justify;
     }
 }

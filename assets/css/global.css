@@ -320,6 +320,8 @@ footer h4 {
 #modal {
     display: none;
     position: fixed;
+    align-items: center;
+    justify-content: center;
     z-index: 20;
     left: 0;
     top: 0;
@@ -329,23 +331,23 @@ footer h4 {
 }
 
 @keyframes modalanimate {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
+    from {opacity: 0}
+    to {opacity: 1}
   }
 
 #modal-window {
     position: relative;
-    top: 0;
-    left: 0;
-    width: 900px;
-    margin: 5% auto;
+    /* min-width: 552px; */
+    width: 75%;
+    max-width: 900px;
     animation-name: modalanimate;
-    animation-duration: 0.4s; 
+    animation-duration: 0.4s;
 }
 
 #modal-window > button {
-    float: right;
-    position: relative;
+    /* float: right; */
+    position: absolute;
+    top: -50px;
     right: -45px;
 }
 
@@ -355,13 +357,13 @@ footer h4 {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: center;   
-    width: 100%;
+    align-items: center; 
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #modal-content > img {
-    min-height: 500px;
+    min-width: 350px;
+    width: 50%;
 }
 
 .pet-info {
@@ -399,4 +401,4 @@ footer h4 {
     display: inline-block;
     width: 1em;
     margin-left: -1em; 
-  }
+}
