@@ -11,7 +11,6 @@
     --color-light-l: #F6F6F6;
     --color-light-xl: #FFFFFF; 
 
-    --color-shadow: rgba(0,0,0,0.48);
     --color-modal-shadow: rgba(29, 29, 29, 0.6);
 
     --common-border: 2px solid var(--color-primary);
@@ -96,11 +95,9 @@ button {
 
 button:hover {
     background-color: var(--color-primary-light);
-    box-shadow: 0 0px 6px 0 var(--color-shadow);  
 }
 
 button[disabled] {
-    box-shadow: none;
     cursor: auto;
 }
 
@@ -209,6 +206,7 @@ header {
     line-height: 1.6;
     padding: 2px 0 3px 0;
     color: var(--color-dark-s);    
+    transition: color var(--default-transition);
 }
 
 #menu a:hover, #menu a.highlight {
@@ -219,18 +217,19 @@ header {
 #burger-button {
     display: none;
     position: relative;
+    cursor: pointer;
     width: 30px;
-    height: 20px;
+    height: 22px;
     border-top: var(--common-border);
     border-bottom: var(--common-border);
-    transition: transform 0.5s;
+    transition: transform var(--default-transition);
     z-index: 10;
 }
 
 #burger-button::after {
     content: '';
     position: absolute;
-    top: 7px;
+    top: 8px;
     width: 30px;
     border-top: var(--common-border);
 }
@@ -337,7 +336,6 @@ footer h4 {
 
 #modal-window {
     position: relative;
-    /* min-width: 552px; */
     width: 75%;
     max-width: 900px;
     animation-name: modalanimate;
@@ -345,7 +343,6 @@ footer h4 {
 }
 
 #modal-window > button {
-    /* float: right; */
     position: absolute;
     top: -50px;
     right: -45px;

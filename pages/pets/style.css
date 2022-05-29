@@ -10,6 +10,15 @@ header {
     margin: 2px 0 12px 0;
 }
 
+#burger-button, #burger-button::after {
+    border-color: var(--color-dark-3xl);
+}
+
+.menu-open #burger-button, .menu-open #burger-button::after {
+    border-color: var(--color-primary);
+}
+
+
 .logo-subtitle {
     color: var(--color-dark-3xl);     
 }

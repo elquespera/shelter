@@ -46,6 +46,8 @@
 
     #cards-container {
         grid-template-columns: repeat(2, 1fr);
+        height: 1372px;
+        overflow: hidden;     
     }    
 
     #cards-container .pet-card {
@@ -88,7 +90,13 @@
 
     #modal-content > img {
         min-width: 100px;
-    }        
+    }     
+    
+    /* Pets page */
+    #pets-content.pets-content {
+        gap: 30px;
+        padding-bottom: 80px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -120,18 +128,19 @@
         padding-top: 243px;
         flex-direction: column;
         align-items: center;
-        gap: 2em;
+        gap: 24px;
         transition: right var(--default-transition);
         z-index: 5;
     }
 
     #menu ul li {
         margin: 0px;
+        padding: 8px 0;
     }
 
     #menu a {
         font-size: 32px;
-        padding: 0px;
+        /* padding: px 0 6px 0; */
     }
 
     #burger-button {
@@ -184,10 +193,6 @@
     .wrapper {
         padding: 42px 10px 42px 10px;
     }    
-
-    main {
-        /* min-width: 320px; */
-    }
 
     h2, h3 {
         font-size: 25px;
@@ -249,13 +254,6 @@
         margin: 0 calc((100% - var(--card-width) - 10px) / 2);
     }
 
-    #cards-container {
-        grid-template-columns: 1fr;
-        max-height: calc(464px * 3);
-        overflow: hidden;
-    }    
-
-
     #help-content {
         width: 100%;
         gap: 42px;
@@ -289,7 +287,6 @@
         font-size: 15px;
         gap: 10px;
         height: 43px;
-        /* width: 100%; */
     }
     #make-donation {
         align-items: center;
@@ -320,16 +317,10 @@
         gap: 29px;
     }
     #footer-contacts h3, #footer-locations h3 {
-        /* padding-left: 10px; */
-        /* padding-right: 10px; */
         max-width: 280px;
     }
     #footer-contacts a, #footer-locations a {
         justify-content: center;
-    }
-
-    #footer-locations a {
-        align-self: flex-start;
     }
 
     /* Modal Window */
@@ -357,5 +348,25 @@
         font-size: 13px;
         margin-bottom: 24px;
         text-align: justify;
+    }
+
+    /* Pets page */
+
+    #pets-content.pets-content {
+        gap: 42px;
+        padding-bottom: 42px;
+    }    
+    #cards-container {
+        grid-template-columns: 1fr;
+        max-height: 1360px;
+    }    
+    #cards-navigation {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    #footer-locations a {
+        align-self: flex-start;
     }
 }
