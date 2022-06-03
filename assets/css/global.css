@@ -355,7 +355,6 @@ body.modal-open #modal {
 
 #modal-window {
     position: fixed;
-    /* position: relative; */
     width: 75%;
     max-width: 900px;
     animation-name: modalanimate;
