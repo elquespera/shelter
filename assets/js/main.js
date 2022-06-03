@@ -1,3 +1,5 @@
+import { burgerMenu } from './menu.js';
+
 // Smooth scroll into view when clicking anchors
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', event => {

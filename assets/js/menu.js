@@ -24,7 +24,10 @@ class BurgerMenu {
         window.addEventListener('resize', _ => {
             if (window.innerWidth >= 768) this.hide();
         }); 
-                          
+        
+        document.querySelector('#burger-button')?.addEventListener('click', _ => {
+            this.toggle();
+        })
     }
     show() {
         if (!this._open) {
@@ -40,3 +43,6 @@ class BurgerMenu {
 
     toggle = () => this._open ? this.hide() : this.show();
 }
+
+const burgerMenu = new BurgerMenu();
+export { burgerMenu };
