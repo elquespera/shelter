@@ -89,7 +89,7 @@
 #pets-slider {
     display: block;
     position: relative;
-    width: 30000px;
+    width: 100000px;
     left: 0;
     transition: left 0.5s ease-out;
 }

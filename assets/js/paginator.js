@@ -15,7 +15,6 @@ class Paginator {
         this.buttons[3].disabled = this.pos >= this.count - 1;
         this.buttons[4].disabled = this.pos >= this.count - 1;
     }
-
     moveTo(position = 0) {
         if (position >= this.count) { 
             position = 0
@@ -28,24 +27,24 @@ class Paginator {
             this.cards[i].style.order = (i + position) % this.count;
         this.resetButtons();
     }
-}
-
-let paginator;
-
-function paginatorClick(button) {
-    if (!paginator) paginator = new Paginator();
-    switch (button.id) {
-        case 'fast-backward':
-            paginator.moveTo(0);
-            break;
-        case 'backward':
-            paginator.moveTo(paginator.pos - 1);
-            break;
-        case 'forward':
-            paginator.moveTo(paginator.pos + 1);
-            break;
-         case 'fast-forward':
-            paginator.moveTo(paginator.count - 1);
-            break;
+    click(button) {
+        switch (button.id) {
+            case 'fast-backward':
+                this.moveTo(0);
+                break;
+            case 'backward':
+                this.moveTo(this.pos - 1);
+                break;
+            case 'forward':
+                this.moveTo(this.pos + 1);
+                break;
+             case 'fast-forward':
+                this.moveTo(this.count - 1);
+                break;
+        }
     }
 }
+
+const paginator = new Paginator();
+
+export {paginator};

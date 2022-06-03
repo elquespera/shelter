@@ -20,7 +20,11 @@ class BurgerMenu {
             if (event.key == 'Escape') {
                 this.hide();
             }
-        });                
+        });
+        window.addEventListener('resize', _ => {
+            if (window.innerWidth >= 768) this.hide();
+        }); 
+                          
     }
     show() {
         if (!this._open) {

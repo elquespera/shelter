@@ -4,7 +4,7 @@ class Modal {
         this.cards = document.getElementsByClassName('pet-card');
         this.count = this.cards.length;
         window.addEventListener('click', event => {
-            if (event.target == checkModal().window)
+            if (event.target == this.window)
                 checkModal().closeModal();
         });
         window.addEventListener('keydown', event => {
@@ -39,7 +39,7 @@ class Modal {
         return document.getElementById('modal');
     }
 
-    openModal(data) {
+    open(data) {
         let name = data.children[1].innerHTML;
         let src = data.children[0].src;
         document.getElementById('pet-title').innerHTML = name;
@@ -51,9 +51,8 @@ class Modal {
         document.body.classList.add('modal-open');
     }
 
-    closeModal() {
+    close() {
         document.body.classList.remove('modal-open');
-        // this.window.style.display = 'none';
     }
 
 }

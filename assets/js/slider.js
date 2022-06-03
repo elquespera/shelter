@@ -1,11 +1,36 @@
+import { pets, generatePetCard } from "./petinfo.js";
+
 class Slider {
     _pos = 0;
     _cardWidth = 270 + 40;
     _cardsInView = 3;
     _slider = document.querySelector('#pets-slider');
-    _cards = document.querySelectorAll('.pet-card');
     constructor() {
+        const repeatPets = () => {
+            const indices = () => {
+                const res = [];
+                while (res.length < pets.length) {
+                    const r = Math.floor(Math.random() * pets.length);
+                    if (!res.includes(r)) res.push(r);
+                }
+                for (let i = 0; i < 10; i++) {
+                    res.push(...res.slice(0, pets.length));
+                }
+                console.log(res);
+                return res;
+            } 
+            const newPets = indices().map(i => pets[i]);
+            return newPets;
+        }
+        this._slider.replaceChildren(generatePetCard(repeatPets()));
+        this._cards = document.querySelectorAll('.pet-card'); 
         this.update();
+        window.addEventListener('resize', _ => {            
+            this.update();
+        });
+        document.querySelectorAll('#slider-left, #slider-right').forEach(button => {
+            button.addEventListener('click', event => this.moveOne(event.currentTarget.id === 'slider-right'));
+        });
     }
 
     get count() {
@@ -13,11 +38,16 @@ class Slider {
     }
 
     update() {
+        this._cardsInView = 3;
+        if (window.innerWidth < 768) {
+            this._cardsInView = 1;
+        } else if (window.innerWidth < 1280) {
+            this._cardsInView = 2;
+        }        
         if (this._cards[0]) {            
             this._cardWidth = this._cards[0].offsetWidth + 
                 parseInt(getComputedStyle(this._cards[0]).marginRight);
         }
-
         this.moveTo(this._pos);
     }
 
@@ -36,26 +66,6 @@ class Slider {
     }
 }
 
-let slider;
+const slider = new Slider();
 
-const checkSlider = () => {
-    if (!slider) slider = new Slider();
-    return slider;
-} 
-
-function sliderButtonClick(isRight = false) {
-    checkSlider().moveOne(isRight); 
-}
-
-window.addEventListener('resize', _ => {
-    const width = window.innerWidth;
-    if (width < 768) {
-        cards = 1;
-    } else if (width < 1280) {
-        cards = 2;
-    } else {
-        cards = 3;
-    }
-    checkSlider()._cardsInView = cards;
-    checkSlider().update();
-});
+export { slider };
