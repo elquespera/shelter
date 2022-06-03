@@ -95,6 +95,17 @@ class BurgerMenu {
     _open = false;
     _elements = ['#menu', '.logo', 'body'].
                 map(el => document.querySelector(el));
+    
+    constructor () {
+        const menuItems = document.querySelectorAll('#menu li');
+        menuItems.forEach(item => {
+            item.addEventListener('click', event => {
+                this.hide();
+            });
+        })
+        // About the shelter behaviour 
+        
+    }
     show() {
         if (!this._open) {
         this._open = true;
@@ -160,4 +171,14 @@ window.addEventListener('keydown', event => {
 
 window.addEventListener('resize', _ => {
     if (window.innerWidth >= 768) checkBurgerMenu().hide();
-})
+});
+
+// Smooth scroll into view when clicking anchors
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', event => {
+        anchor = event.currentTarget;
+        document.querySelector(anchor.getAttribute('href')).
+                scrollIntoView({ behavior: 'smooth' });
+        event.preventDefault();
+    });
+});
