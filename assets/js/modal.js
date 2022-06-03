@@ -1,3 +1,5 @@
+import { pets } from "./petinfo.js";
+
 class Modal {
     constructor() {
         this.window = this.injectModal();
@@ -5,11 +7,11 @@ class Modal {
         this.count = this.cards.length;
         window.addEventListener('click', event => {
             if (event.target == this.window)
-                checkModal().closeModal();
+                this.close();
         });
         window.addEventListener('keydown', event => {
             if (event.key == 'Escape') {
-                this.closeModal();
+                this.close();
             }
         });
     }
@@ -19,12 +21,12 @@ class Modal {
         _modal.id = 'modal';
         _modal.innerHTML = 
         `<div id="modal-window">
-            <button type="button" class="secondary circle close" onclick="modalClose()"></button>
+            <button type="button" class="secondary circle close"></button>
             <div id="modal-content">
                 <img id="pet-picture">
                 <div id="pet-info" class="pet-info">
                     <h3 id="pet-title"></h3>
-                    <h4 id="pet-info-kind"></h4>
+                    <h4><span id="pet-info-type"></span> - <span id="pet-info-breed"></span></h4>
                     <h5 id="pet-info-desc"></h5>
                     <ul>
                         <li>Age: <span id="pet-info-age"></span></li>
@@ -34,19 +36,18 @@ class Modal {
                     </ul>
                 </div>
             </div>
-        </div>`;
+        </div>`;        
+        _modal.querySelector('button').addEventListener('click', _ => this.close());
         document.body.appendChild(_modal);
         return document.getElementById('modal');
     }
 
     open(data) {
-        let name = data.children[1].innerHTML;
-        let src = data.children[0].src;
-        document.getElementById('pet-title').innerHTML = name;
-        document.getElementById('pet-picture').src = src;
-        ['kind', 'desc', 'age', 'inoculations', 'diseases', 'parasites'].forEach(x=>{
+        document.getElementById('pet-title').innerHTML = data.name;
+        document.getElementById('pet-picture').src = data.img;
+        ['type', 'breed', 'description', 'age', 'inoculations', 'diseases', 'parasites'].forEach(x => {
             let el = document.getElementById('pet-info-' + x);
-            if (el) el.innerHTML = pets[name][x] ?? 'none';
+            if (el) el.innerHTML = data[x] ?? 'none';
         });
         document.body.classList.add('modal-open');
     }

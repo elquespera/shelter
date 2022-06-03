@@ -16,7 +16,6 @@ class Slider {
                 for (let i = 0; i < 10; i++) {
                     res.push(...res.slice(0, pets.length));
                 }
-                console.log(res);
                 return res;
             } 
             const newPets = indices().map(i => pets[i]);
