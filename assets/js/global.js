@@ -81,12 +81,14 @@ class Modal {
         ['kind', 'desc', 'age', 'inoculations', 'diseases', 'parasites'].forEach(x=>{
             let el = document.getElementById('pet-info-' + x);
             if (el) el.innerHTML = pets[name][x] ?? 'none';
-        })
-        this.window.style.display = 'flex';
+        });
+        document.body.classList.add('modal-open');
+        // this.window.style.display = 'flex';
     }
 
     closeModal() {
-        this.window.style.display = 'none';
+        document.body.classList.remove('modal-open');
+        // this.window.style.display = 'none';
     }
 
 }

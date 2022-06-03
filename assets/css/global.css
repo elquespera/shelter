@@ -315,10 +315,26 @@ footer h4 {
     min-height: 46px;
 }
 
+
+/* Hide vertical scroll bars & inject backdrop when menu or modal are open */
+body.menu-open, body.modal-open {
+    overflow-y: hidden;
+}
+body.menu-open::after, body.modal-open::after {
+    content: '';
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-modal-shadow);     
+}  
+
 /* Modal Window */
 #modal {
     display: none;
-    position: fixed;
+    position: absolute;
     align-items: center;
     justify-content: center;
     z-index: 20;
@@ -326,7 +342,10 @@ footer h4 {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-modal-shadow);
+}
+
+body.modal-open #modal {
+    display: flex;
 }
 
 @keyframes modalanimate {
@@ -335,7 +354,8 @@ footer h4 {
   }
 
 #modal-window {
-    position: relative;
+    position: fixed;
+    /* position: relative; */
     width: 75%;
     max-width: 900px;
     animation-name: modalanimate;
