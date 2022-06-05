@@ -130,6 +130,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        min-height: 500px;
         gap: 24px;
         transition: right var(--default-transition);
         z-index: 5;

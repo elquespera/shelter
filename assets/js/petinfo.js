@@ -110,5 +110,28 @@ function generatePetCard(data) {
     }
 }
 
+function repeatPets (n = pets.length, count = 10, pageDiff = false) {
+  const indices = () => {
+    const generateOnce = () => {
+      const res = [];
+      while (res.length < n) {
+          const r = Math.floor(Math.random() * pets.length);
+          if (!res.includes(r)) res.push(r);
+      }
+      return res;
+    }
+    const res = generateOnce();
+    if (pageDiff) {
+      for (let i = 1; i < count; i++) 
+          res.push(...generateOnce());
+    } else {
+      for (let i = 1; i < count; i++) 
+          res.push(...res.slice(0, n));
+      return res;
+    }
+    return res;
+  }
+  return indices().map(i => pets[i]);;
+}
 
-export { pets, generatePetCard };
+export { pets, generatePetCard, repeatPets };

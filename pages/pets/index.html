@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">   
     <link rel="icon" href="../../assets/icons/house.svg" type="image/svg+xml">
+
     <script type="module" src="../../assets/js/main.js"></script>
+    <script type="module" src="script.js"></script>
     <title>Our pets</title>
 </head>
 <body>
@@ -37,54 +39,14 @@
                 <h3>Our friends who<br>are looking for a house</h3>
                 <div id="cards-wrapper">
                     <div id="cards-container">
-                        <div class="pet-card" onclick="modalOpen(this)">
-                            <img src="../../assets/images/pets-katrine.png" alt="Katrine">
-                            <h4>Katrine</h4>
-                            <button type="button" class="secondary">Learn more</button>
-                        </div>
-                        <div class="pet-card" onclick="modalOpen(this)">
-                            <img src="../../assets/images/pets-jennifer.png" alt="Jennifer">
-                            <h4>Jennifer</h4>
-                            <button type="button" class="secondary">Learn more</button>
-                        </div>
-                        <div class="pet-card" onclick="modalOpen(this)">
-                            <img src="../../assets/images/pets-woody.png" alt="Woody">
-                            <h4>Woody</h4>
-                            <button type="button" class="secondary">Learn more</button>
-                        </div>          
-                        <div class="pet-card" onclick="modalOpen(this)">
-                            <img src="../../assets/images/pets-sophia.png" alt="Sophia">
-                            <h4>Sophia</h4>
-                            <button type="button" class="secondary">Learn more</button>
-                        </div>    
-                        <div class="pet-card" onclick="modalOpen(this)">
-                            <img src="../../assets/images/pets-timmy.png" alt="Timmy">
-                            <h4>Timmy</h4>
-                            <button type="button" class="secondary">Learn more</button>
-                        </div>       
-                        <div class="pet-card" onclick="modalOpen(this)">
-                            <img src="../../assets/images/pets-charly.png" alt="Charly">
-                            <h4>Charly</h4>
-                            <button type="button" class="secondary">Learn more</button>
-                        </div>        
-                        <div class="pet-card" onclick="modalOpen(this)">
-                            <img src="../../assets/images/pets-scarlet.png" alt="Scarlet">
-                            <h4>Scarlett</h4>
-                            <button type="button" class="secondary">Learn more</button>
-                        </div>    
-                        <div class="pet-card" onclick="modalOpen(this)">
-                            <img src="../../assets/images/pets-freddie.png" alt="Freddie">
-                            <h4>Freddie</h4>
-                            <button type="button" class="secondary">Learn more</button>
-                        </div>                                                                                                                                                       
                     </div>
                 </div>
                 <div id="cards-navigation">
-                    <button type="button" id="fast-backward" class="secondary circle" disabled onclick="paginatorClick(this)">&lt;&lt;</button>
-                    <button type="button" id="backward" class="secondary circle" disabled onclick="paginatorClick(this)">&lt;</button>
-                    <button type="button" id="current-number" class="secondary circle" disabled onclick="">1</button>
-                    <button type="button" id="forward" class="secondary circle" onclick="paginatorClick(this)">&gt;</button>
-                    <button type="button" id="fast-forward" class="secondary circle" onclick="paginatorClick(this)">&gt;&gt;</button>
+                    <button type="button" id="fast-backward" class="secondary circle" disabled >&lt;&lt;</button>
+                    <button type="button" id="backward" class="secondary circle" disabled >&lt;</button>
+                    <button type="button" id="current-number" class="secondary circle">1</button>
+                    <button type="button" id="forward" class="secondary circle" >&gt;</button>
+                    <button type="button" id="fast-forward" class="secondary circle" >&gt;&gt;</button>
                 </div>    
             </div>      
         </div>

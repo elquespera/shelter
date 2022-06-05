@@ -1,30 +1,15 @@
-import { pets, generatePetCard } from "./petinfo.js";
+import { pets, generatePetCard, repeatPets } from "./petinfo.js";
 
 class Slider {
     _pos = 0;
     _cardWidth = 270 + 40;
     _cardsInView = 3;
     _slider = document.querySelector('#pets-slider');
-    constructor() {
-        const repeatPets = () => {
-            const indices = () => {
-                const res = [];
-                while (res.length < pets.length) {
-                    const r = Math.floor(Math.random() * pets.length);
-                    if (!res.includes(r)) res.push(r);
-                }
-                for (let i = 0; i < 10; i++) {
-                    res.push(...res.slice(0, pets.length));
-                }
-                return res;
-            } 
-            const newPets = indices().map(i => pets[i]);
-            return newPets;
-        }
+    constructor() {       
         this._slider.replaceChildren(generatePetCard(repeatPets()));
         this._cards = document.querySelectorAll('.pet-card'); 
         this.update();
-        window.addEventListener('resize', _ => {            
+        window.addEventListener('resize', () => {            
             this.update();
         });
         document.querySelectorAll('#slider-left, #slider-right').forEach(button => {
@@ -51,10 +36,10 @@ class Slider {
     }
 
     moveTo(position = 0) {
-        if (position >= this.count) { 
+        if (position >= this.count - 2) { 
             position = 0
         } else if (position < 0) {
-            position = this.count - 1;
+            position = this.count - 3;
         }
         this._slider.style.left = -position * this._cardWidth + 'px';        
         this._pos = position;

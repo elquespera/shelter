@@ -1,11 +1,31 @@
+import { pets, generatePetCard, repeatPets } from "./petinfo.js";
+
 class Paginator {
     pos = 0;
+    cardsNumber;
     constructor() {
         this.container = document.getElementById('cards-container');
         this.cards = this.container.children;
         this.count = this.cards.length;
         this.buttons = ['fast-backward', 'backward', 'current-number', 'forward', 'fast-forward'].
                         map(id => document.getElementById(id));
+        window.addEventListener('resize', () => {            
+            this.update();
+        });                        
+        this.update();
+    }
+
+    update() {
+        let cardsNumber = 8;
+        if (window.innerWidth < 768) {
+            this._cardsInView = 6;
+        } else if (window.innerWidth < 1280) {
+            this._cardsInView = 3;
+        }
+        if (this.cardsNumber != cardsNumber) {
+            this.cardsNumber = cardsNumber;
+            this.container.replaceChildren(generatePetCard(repeatPets(cardsNumber, 6, true)));
+        }
     }
 
     resetButtons () {
@@ -27,6 +47,7 @@ class Paginator {
             this.cards[i].style.order = (i + position) % this.count;
         this.resetButtons();
     }
+
     click(button) {
         switch (button.id) {
             case 'fast-backward':
@@ -47,4 +68,4 @@ class Paginator {
 
 const paginator = new Paginator();
 
-export {paginator};
+export { paginator };
