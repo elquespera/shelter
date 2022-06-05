@@ -44,10 +44,13 @@
         margin-right: 40px;
     }
 
+    #cards-wrapper {
+        height: 1372px;
+        max-width: 588px;        
+    }
+
     #cards-container {
         grid-template-columns: repeat(2, 1fr);
-        height: 1372px;
-        overflow: hidden;     
     }    
 
     #cards-container .pet-card {
@@ -130,7 +133,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-height: 500px;
         gap: 24px;
         transition: right var(--default-transition);
         z-index: 5;
@@ -332,6 +334,9 @@
     }
 
     /* Pets page */
+    #cards-wrapper {
+        max-width: 310px;    
+    }
 
     #pets-content.pets-content {
         gap: 42px;

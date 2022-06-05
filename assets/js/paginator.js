@@ -3,28 +3,36 @@ import { pets, generatePetCard, repeatPets } from "./petinfo.js";
 class Paginator {
     pos = 0;
     cardsNumber;
+    wrapper = document.getElementById('cards-wrapper');
+    container = document.getElementById('cards-container');
+    buttons = ['fast-backward', 'backward', 'current-number', 'forward', 'fast-forward'].
+                map(id => document.getElementById(id));
+
     constructor() {
-        this.container = document.getElementById('cards-container');
-        this.cards = this.container.children;
-        this.count = this.cards.length;
-        this.buttons = ['fast-backward', 'backward', 'current-number', 'forward', 'fast-forward'].
-                        map(id => document.getElementById(id));
+        this.buttons.forEach(button => button.addEventListener('click', e => {
+            this.click(e.currentTarget.id);
+        }));                   
         window.addEventListener('resize', () => {            
             this.update();
         });                        
         this.update();
     }
 
+    get count() {
+        return 48 / this.cardsNumber;
+    }
+
     update() {
         let cardsNumber = 8;
         if (window.innerWidth < 768) {
-            this._cardsInView = 6;
+            cardsNumber = 6;
         } else if (window.innerWidth < 1280) {
-            this._cardsInView = 3;
+            cardsNumber = 3;
         }
         if (this.cardsNumber != cardsNumber) {
             this.cardsNumber = cardsNumber;
-            this.container.replaceChildren(generatePetCard(repeatPets(cardsNumber, 6, true)));
+            this.container.replaceChildren(generatePetCard(repeatPets(cardsNumber, this.count, true)));
+            this.moveTo(0);
         }
     }
 
@@ -41,15 +49,16 @@ class Paginator {
         } else if (position < 0) {
             position = this.count - 1;
         }
-        this.pos = position;
-        console.log(this.cards[0].style.order);
-        for (let i = 0; i < this.count; i++)
-            this.cards[i].style.order = (i + position) % this.count;
+        this.pos = position;        
+        console.log('-' + this.wrapper.offsetHeight + 'px');
+        const top = '-' + (this.wrapper.offsetHeight * position) + 'px'
+        console.log(top);
+        this.container.style.top = top;
         this.resetButtons();
     }
 
     click(button) {
-        switch (button.id) {
+        switch (button) {
             case 'fast-backward':
                 this.moveTo(0);
                 break;
