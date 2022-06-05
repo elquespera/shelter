@@ -105,13 +105,12 @@ function generatePetCard(data) {
             <img src="${data.img}" alt="${data.name}">
             <h4>${data.name}</h4>
             <button type="button" class="secondary">Learn more</button>`;
-        cardDiv.addEventListener('click', _ => { modal.open(data) });
+        cardDiv.addEventListener('click', () => { modal.open(data) });
         return cardDiv;
     }
 }
 
 function repeatPets (n = pets.length, count = 10, pageDiff = false) {
-  console.log(n);
   const indices = () => {
     const generateOnce = () => {
       const res = [];

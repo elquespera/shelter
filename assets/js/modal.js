@@ -4,13 +4,15 @@ class Modal {
     constructor() {
         this.window = this.injectModal();
         this.cards = document.getElementsByClassName('pet-card');
-        this.count = this.cards.length;
-        window.addEventListener('click', event => {
-            if (event.target == this.window)
-                this.close();
-        });
+        this.count = this.cards.length;        
         window.addEventListener('keydown', event => {
             if (event.key == 'Escape') {
+                this.close();
+            }
+        });
+        window.addEventListener('click', event => {
+            console.log(event.target);
+            if (event.target === this.window) {
                 this.close();
             }
         });
