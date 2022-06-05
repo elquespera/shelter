@@ -111,6 +111,7 @@ function generatePetCard(data) {
 }
 
 function repeatPets (n = pets.length, count = 10, pageDiff = false) {
+  console.log(n);
   const indices = () => {
     const generateOnce = () => {
       const res = [];

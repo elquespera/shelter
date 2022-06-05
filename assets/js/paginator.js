@@ -19,15 +19,19 @@ class Paginator {
     }
 
     get count() {
-        return 48 / this.cardsNumber;
+        return 6;//48 / this.cardsNumber;
     }
+
+    get nrows () {
+        return this.cardsNumber === 8 ? 2 : 3;
+    }    
 
     update() {
         let cardsNumber = 8;
         if (window.innerWidth < 768) {
-            cardsNumber = 6;
-        } else if (window.innerWidth < 1280) {
             cardsNumber = 3;
+        } else if (window.innerWidth < 1280) {
+            cardsNumber = 6;
         }
         if (this.cardsNumber != cardsNumber) {
             this.cardsNumber = cardsNumber;
@@ -43,6 +47,7 @@ class Paginator {
         this.buttons[3].disabled = this.pos >= this.count - 1;
         this.buttons[4].disabled = this.pos >= this.count - 1;
     }
+
     moveTo(position = 0) {
         if (position >= this.count) { 
             position = 0
@@ -50,9 +55,7 @@ class Paginator {
             position = this.count - 1;
         }
         this.pos = position;        
-        console.log('-' + this.wrapper.offsetHeight + 'px');
-        const top = '-' + (this.wrapper.offsetHeight * position) + 'px'
-        console.log(top);
+        const top = '-' + ((433 + 30) * this.nrows * position) + 'px';
         this.container.style.top = top;
         this.resetButtons();
     }
