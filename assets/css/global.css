@@ -346,6 +346,11 @@ body.menu-open::after, body.modal-open::after {
     height: 100vh;
 }
 
+#modal:hover button.close {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+}
+
 body.modal-open #modal {
     display: flex;
 }
@@ -367,6 +372,10 @@ body.modal-open #modal {
     position: absolute;
     top: -50px;
     right: -45px;
+}
+
+#modal-window:hover button.close:not(:hover) {
+    background-color: transparent;
 }
 
 #modal-content {
