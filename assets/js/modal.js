@@ -11,7 +11,6 @@ class Modal {
             }
         });
         window.addEventListener('click', event => {
-            console.log(event.target);
             if (event.target === this.window) {
                 this.close();
             }

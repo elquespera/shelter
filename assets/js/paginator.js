@@ -19,7 +19,7 @@ class Paginator {
     }
 
     get count() {
-        return 6;
+        return 48 / this.cardsNumber;
     }
 
     get nrows () {
